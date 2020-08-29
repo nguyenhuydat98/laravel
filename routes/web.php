@@ -29,3 +29,13 @@ Route::group(['prefix' => 'middleware'], function(){
 Route::resource('resource', 'ResourceController');
 
 Route::get('request', 'DemoRequestController@request')->name('DemoRequest');
+
+Route::group(['prefix' => 'response'], function(){
+	Route::get('/', 'DemoResponseController@demo');
+	Route::get('header', 'DemoResponseController@header');
+	// Route::get('/cookie', 'DemoResponseController@cookie');
+	Route::get('view', 'DemoResponseController@view');
+	// Route::get('/json', 'DemoResponseController@json');
+	Route::get('download', 'DemoResponseController@download');
+	Route::get('file', 'DemoResponseController@file');
+});
