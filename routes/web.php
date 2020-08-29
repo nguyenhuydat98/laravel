@@ -39,3 +39,10 @@ Route::group(['prefix' => 'response'], function(){
 	Route::get('download', 'DemoResponseController@download');
 	Route::get('file', 'DemoResponseController@file');
 });
+
+Route::group(['prefix' => 'redirect'], function(){
+	Route::get('/uri', 'DemoRedirectController@uri');
+	Route::get('/route', 'DemoRedirectController@route');
+	Route::get('/action', 'DemoRedirectController@action');
+	Route::get('/domain', 'DemoRedirectController@domain');
+});

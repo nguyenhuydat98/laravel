@@ -8,7 +8,7 @@ use Illuminate\Http\Response;
 class DemoResponseController extends Controller
 {
     public function demo() {
-    	return ['Dat', 'Tien', 'Thinh'];
+    	return ['A', 'B', 'C'];
     }
 
     public function header() {
