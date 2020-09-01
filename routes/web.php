@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* --------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,4 +45,28 @@ Route::group(['prefix' => 'redirect'], function(){
 	Route::get('/route', 'DemoRedirectController@route');
 	Route::get('/action', 'DemoRedirectController@action');
 	Route::get('/domain', 'DemoRedirectController@domain');
+});
+
+Route::get('blade', 'DemoBladeTeamplateController@basic');
+
+Route::group(['prefix' => 'url'], function(){
+	Route::get('/', 'UrlController@demo');
+});
+
+Route::group(['prefix' => 'eloquent'], function(){
+	Route::get('/', 'DemoEloquentController@getAll');
+	Route::get('where', 'DemoEloquentController@get');
+	Route::get('chunk', 'DemoEloquentController@chunk');
+	Route::get('search', 'DemoEloquentController@search');
+	Route::get('insert', 'DemoEloquentController@insert');
+	Route::get('update', 'DemoEloquentController@update');
+	Route::get('delete', 'DemoEloquentController@delete');
+	Route::get('restore', 'DemoEloquentController@restore');
+	Route::get('force', 'DemoEloquentController@forceDelete');
+});
+
+Route::group(['prefix' => 'relationship'], function(){
+	Route::get('oneone', 'RelationshipController@oneone');
+	Route::get('onemany', 'RelationshipController@onemany');
+	Route::get('manymany', 'RelationshipController@manymany');
 });
