@@ -70,3 +70,10 @@ Route::group(['prefix' => 'relationship'], function(){
 	Route::get('onemany', 'RelationshipController@onemany');
 	Route::get('manymany', 'RelationshipController@manymany');
 });
+
+Route::get('accessors', 'AccessorsController@accessors');
+Route::get('murators', 'MuratorsController@murators');
+
+Route::group(['prefix' => 'eagerloading'], function(){
+	Route::get('/', 'EagerLoadingController@eagerLoading');
+});

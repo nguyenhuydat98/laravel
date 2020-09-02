@@ -16,11 +16,21 @@ class User extends Model
     	'updated_at'
     ];
 
+    // protected $guarded = [];
+
     public function account() {
         return $this->hasOne(Account::class);
     }
 
     public function products() {
         return $this->hasMany(Product::class);
+    }
+
+    public function getNameAttribute($name) {
+        return strtoupper($name);
+    }
+
+    public function setNameAttribute($name) {
+        $this->attributes['name'] = strtolower($name);
     }
 }
