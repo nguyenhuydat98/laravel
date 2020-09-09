@@ -17,11 +17,17 @@ class Product extends Model
     	'updated_at'
     ];
 
+    protected $touches = ['user'];
+
     public function user() {
         return $this->belongsTo(User::class);
     }
 
     public function orders() {
         return $this->belongsToMany(Order::class);
+    }
+
+    public function image() {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

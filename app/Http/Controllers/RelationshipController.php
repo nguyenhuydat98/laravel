@@ -15,7 +15,8 @@ class RelationshipController extends Controller
 {
     public function oneone() {
         echo "<h1>Account</h1>";
-        $account = User::findOrFail(50)->account;
+        $user = User::findOrFail(50);
+        $account = $user->account;
         echo "$account->id<br>" . 
             "$account->user_id<br>" .
             "$account->username<br>" .

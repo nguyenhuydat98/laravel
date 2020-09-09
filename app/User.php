@@ -33,4 +33,9 @@ class User extends Model
     public function setNameAttribute($name) {
         $this->attributes['name'] = strtolower($name);
     }
+
+
+    public function image() {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

@@ -77,3 +77,7 @@ Route::get('murators', 'MuratorsController@murators');
 Route::group(['prefix' => 'eagerloading'], function(){
 	Route::get('/', 'EagerLoadingController@eagerLoading');
 });
+
+Route::group(['prefix' => 'polymorphic'], function(){
+	Route::get('onetoone', 'PolymorphicController@onetoone');
+});
